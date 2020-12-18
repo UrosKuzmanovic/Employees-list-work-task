@@ -1,0 +1,20 @@
+{% block employeeTable %}
+    <table width="80%" id="employee-table" class="table table-hover">
+        <tr>
+            <th style="text-align: center">Full name</th>
+            <th style="text-align: center">Birthday</th>
+            <th style="text-align: center">Gender</th>
+            <th style="text-align: center">Active</th>
+            <th style="text-align: center"></th>
+        </tr>
+        {% for employee in employees %}
+            <tr>
+                <td style="text-align: center">{{ employee.getFullName() }}</td>
+                <td style="text-align: center">{{ employee.getBirthday() | date('d/m/Y') }}</td>
+                <td style="text-align: center">{{ employee.getGender() }}</td>
+                <td style="text-align: center">{{ employee.getActive() ? 'Active' : 'Inactive' }}</td>
+                <td style="text-align: center"><a href="{{ path('edit_employee', { 'id': employee.getID() }) }}">Edit</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

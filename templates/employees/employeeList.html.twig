@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List of employees
+{% endblock %}
+
+{% block body %}
+
+	<div class="container" style="margin-top: 20px; margin-bottom: 20px">
+			<a href="{{ path('add_employee') }}">Add employee -></a>
+		</p>
+		<div id="table">
+			{% block employeeTable %}
+				{% include 'employees/employeeTable.html.twig' %}
+		{% endblock %}
+		</div>
+		<select id="active-select" onchange="changeActivity()" class="form-control">
+			<option value="2">All</option>
+			<option value="1">Active</option>
+			<option value="0">Inactive</option>
+		</select>
+	</div>
+
+
+
+	<script>
+		function changeActivity(){
+			selectedActivity = document.getElementById('active-select').value;
+			/*$.ajax({
+				url: "{{ path('employee_table') }}",
+				type: 'POST',
+				dataType: 'json',
+				data: {
+					activity: selectedActivity
+				},
+				success: function(result){
+					//$('#table').load('employee-table');
+					document.getElementById('test').innerHTML = 'a';
+				},
+				fail: function(){
+
+				}
+			});*/
+			$('#employee-table').load('activity-employees #employee-table', {
+				activity: selectedActivity
+			});
+		}
+	</script>
+
+{% endblock %}

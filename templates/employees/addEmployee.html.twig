@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add employee
+{% endblock %}
+
+{% block body %}
+
+	<div class="container" style="margin-top: 20px; margin-bottom: 20px">
+		<p>
+			<a href="{{ path('employee_list') }}"><- List of employees</a>
+		</p>
+
+			{{ form_start(form) }}
+
+			{{ form_widget(form) }}
+
+			{{ form_errors(form) }}
+
+			{{ form_end(form) }}
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			$('.title-select').select2({
+				ajax: {
+					url: "{{ path('search_titles') }}",
+					type: 'POST',
+					dataType: 'json',
+					data: function (params) {
+						return {
+							searchTerm: params.term
+						};
+					},
+					processResults: function (response) {
+						return {
+							results: $.map(response, function (obj) {
+								obj.text = obj.text || obj.name;
+								return obj;
+							})
+						}
+					},
+					cache: true
+				}
+			});
+
+		});
+		$(document).ready(function () {
+			$('.gender-select').select2({});
+		});
+		$(document).ready(function () {
+			$(".datepicker").datepicker();
+		});
+	</script>
+
+{% endblock %}
