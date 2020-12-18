@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="421f13ce-9435-4276-973a-109e79522817" name="Default Changelist" comment="" />
+    <list default="true" id="421f13ce-9435-4276-973a-109e79522817" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,6 +153,7 @@
       <command value="npm run dev" />
       <command value="./node_modules/.bin/encore dev" />
       <command value="symfony server:start" />
+      <command value="git push origin main" />
     </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -181,7 +185,7 @@
       <workItem from="1608290050340" duration="60000" />
       <workItem from="1608290125519" duration="198000" />
       <workItem from="1608290348589" duration="62000" />
-      <workItem from="1608290585150" duration="639000" />
+      <workItem from="1608290585150" duration="1234000" />
     </task>
     <servers />
   </component>
